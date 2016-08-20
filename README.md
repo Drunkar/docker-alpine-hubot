@@ -59,10 +59,7 @@ You have a few options in how to utilize this container
 ## Basic Start
 
 ```
-docker run -v -e HUBOT_HIPCHAT_JID=jid \
-  -e HUBOT_HIPCHAT_PASSWORD=secret \
-  -e HUBOT_AUTH_ADMIN=admin \
-  -d drunkar/docker-alpinehubot
+docker run -d drunkar/docker-alpinehubot
 ```
 
 ## Configuration File Start
