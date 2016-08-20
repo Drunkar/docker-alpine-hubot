@@ -3,8 +3,8 @@ This docker image is heavily relies on https://github.com/HearstAT/docker-alpine
 
 # Build Info
 ## NODE
-- NodeJS: 4.12
-- NPM: 2.24.9
+- NodeJS: 6.3.1
+- NPM: 3
 
 ## Default Scripts
 - [hubot-diagnostics]()
