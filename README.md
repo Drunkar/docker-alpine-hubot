@@ -62,13 +62,13 @@ You have a few options in how to utilize this container
 docker run -v -e HUBOT_HIPCHAT_JID=jid \
   -e HUBOT_HIPCHAT_PASSWORD=secret \
   -e HUBOT_AUTH_ADMIN=admin \
-  -d hearstat/alpine-hubot
+  -d drunkar/docker-alpinehubot
 ```
 
 ## Configuration File Start
 
 ```
-docker run -v /path/to/hubot.conf:/opt/hubot/config/hubot.conf -d hearstat/alpine-hubot
+docker run -v /path/to/hubot.conf:/opt/hubot/config/hubot.conf -d drunkar/docker-alpinehubot
 ```
 
 ## Full Feature Start
@@ -77,12 +77,12 @@ docker run -v /path/to/hubot.conf:/opt/hubot/config/hubot.conf -d hearstat/alpin
 docker run -v /path/to/hubot.conf:/opt/hubot/config/hubot.conf \
 -v /path/to/redis/save:/var/lib/redis \
 -v /path/to/external-scripts.json:/opt/hubot/external-scripts.json \
--d hearstat/alpine-hubot
+-d drunkar/docker-alpinehubot
 ```
 ## Dev Mode Start
 I've setup this bot to be able to switch back and forth from Hipchat to Shell via startup commands. This is how to get into "Dev Mode" or enable the shell adapter.
 ```
-docker run -d hearstat/alpine-hubot /usr/bin/devmode
+docker run -d drunkar/docker-alpinehubot /usr/bin/devmode
 ```
 then just do the following to connect to the container at the shell level
 ```
@@ -98,7 +98,7 @@ Then you can interact with hubot at the shell level
 
 Run:
 
-    docker run -d -p 8123:8123 -p 5858:5858 --name=devbot hearstat/alpine-hubot devmode
+    docker run -d -p 8123:8123 -p 5858:5858 --name=devbot drunkar/docker-alpinehubot devmode
     docker exec -it devbot bash
     coffee --nodejs --debug $(which hubot)
 
@@ -119,7 +119,7 @@ To set a breakpoint in coffeescript you will want to open the code in the /opt/h
 You may want to mount a directory locally so you can use your local editor.  For Mac this will need to be in your /Users/<username> dir  To do this consider:
 
     mkdir -p ~/node_modules
-    docker run -d -p 8123:8123 -p 5858:5858 -v /Users/<username>/node_modules:/opt/hubot/node_modules --name=devbot hearstat/alpine-hubot devmode
+    docker run -d -p 8123:8123 -p 5858:5858 -v /Users/<username>/node_modules:/opt/hubot/node_modules --name=devbot drunkar/docker-alpinehubot devmode
 
 ## Prod Mode Start
 To switch back to hipchat or "Prod Mode" do the following
@@ -146,14 +146,9 @@ Then in chat tell hubot to reload (my default is thebot)
 To build the image, do the following
 
 ```
-docker build github.com/hearstat/docker-alpinehubot
+docker build github.com/Drunkar/docker-alpinehubot
 ```
 
-A prebuilt container is available in the docker index.
-
-```
-docker pull hearstat/alpine-hubot
-```
 
 # Template files
 ## Hubot.Conf
@@ -165,10 +160,7 @@ The baseline config file in container only has ADAPTER/HUBOT_NAME set.
 
 ```
 ## Bot Settings
-export HUBOT_NAME='hubot' # what hubot listens to
-
-## Comma separated list of users who administer Hubot Auth
-export HUBOT_AUTH_ADMIN="YourName"
+export HUBOT_NAME='hubot'
 
 ## Slack adapter settings
 # slack setting
@@ -188,9 +180,6 @@ The embedded script-install.py utilizes the external-scripts.json for it's insta
   "hubot-redis-brain",
   "hubot-rules",
   "hubot-shipit",
-  "hubot-pager-me",
-  "hubot-plusplus",
-  "hubot-reload-scripts",
-  "hubot-leankit"
+  "hubot-reload-scripts"
 ]
 ```
