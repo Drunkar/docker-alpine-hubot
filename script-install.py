@@ -4,7 +4,15 @@ import json
 import os
 from subprocess import call
 
-with open("external-scripts.json") as data_file:
+module_names = []
+with open("external-scripts-for-npm.json") as data_file:
     scripts = json.load(data_file)
     for script in scripts:
         call( ["npm", "install", script, "--save"])
+        module_name = script
+        if "/" in script:
+            module_name = os.path.splitext(os.path.basename(script))[0]
+        module_names.append('"' + module_name + '"')
+
+with open("external-scripts.json", "w") as install_file:
+     install_file.write("[" + ",".join(module_names) + "]")

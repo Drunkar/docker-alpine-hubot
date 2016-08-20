@@ -51,7 +51,7 @@ Mount the scripts directory to manage any non-npm installs/simple scripts
 - /opt/hubot/scripts
 
 Mount the external-scripts for control
-- /opt/hubot/external-scripts.json
+- /opt/hubot/external-scripts-for-npm.json
 
 # Usage
 You have a few options in how to utilize this container
@@ -73,7 +73,7 @@ docker run -v /path/to/hubot.conf:/opt/hubot/config/hubot.conf -d drunkar/docker
 ```
 docker run -v /path/to/hubot.conf:/opt/hubot/config/hubot.conf \
 -v /path/to/redis/save:/var/lib/redis \
--v /path/to/external-scripts.json:/opt/hubot/external-scripts.json \
+-v /path/to/external-scripts-for-npm.json:/opt/hubot/external-scripts-for-npm.json \
 -d drunkar/docker-alpinehubot
 ```
 ## Dev Mode Start
@@ -126,7 +126,7 @@ docker exec $container_name /usr/bin/prodmode
 or just run a new container
 
 # Run Time Help
-Since this container comes with a bot reload option, edit the external-scripts.json as needed and run the following
+Since this container comes with a bot reload option, edit the external-scripts-for-npm.json as needed and run the following
 
 ```
 docker exec $container_name python script-install.py
@@ -164,8 +164,8 @@ export HUBOT_NAME='hubot'
 export HUBOT_SLACK_TOKEN=<YOUR_TOKEN>
 ```
 
-## external-scripts.json
-The embedded script-install.py utilizes the external-scripts.json for it's install items, I did this to simplify the process. You already have to add everything to the file regardless, so use it to install from.
+## external-scripts-for-npm.json
+The embedded script-install.py utilizes the external-scripts-for-npm.json for it's install items, I did this to simplify the process. You already have to add everything to the file regardless, so use it to install from.
 
 ```
 [

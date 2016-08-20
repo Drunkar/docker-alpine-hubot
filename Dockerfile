@@ -109,7 +109,7 @@ USER hubot
 RUN yo hubot --owner="Drunkar <drunkars.p@gmail.com>" --name="Hubot" --description="Awesome bot." --adapter=slack --defaults
 
 # Utilize external-scripts.json to control which scripts are installed. As it's already the gatekeeper might as well install from it.
-COPY external-scripts.json $HUBOT_HOME/external-scripts.json
+COPY external-scripts.json $HUBOT_HOME/external-scripts-for-npm.json
 # Script to parse external-scripts.json to perform the npm install $script --save
 COPY script-install.py $HUBOT_HOME/script-install.py
 RUN python script-install.py
