@@ -3,10 +3,11 @@
   "hubot-help",
   "hubot-google-images",
   "hubot-pugme",
+  "hubot-google-translate",
+  "hubot-maps",
   "hubot-redis-brain",
   "hubot-rules",
   "hubot-shipit",
-  "hubot-pager-me",
-  "hubot-reload-scripts",
-  "hubot-leankit"
+  "hubot-youtube",
+  "hubot-reload-scripts"
 ]

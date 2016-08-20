@@ -1,5 +1,5 @@
-# hearstat/alpine-hubot
-Hubot running on [Alpine](https://hub.docker.com/_/alpine/) with the [Hipchat Adapter](https://github.com/hipchat/hubot-hipchat).
+# Drunkar/hubot-alpine
+This docker image is heavily relies on https://github.com/HearstAT/docker-alpinehubot.
 
 # Build Info
 ## NODE
@@ -7,7 +7,6 @@ Hubot running on [Alpine](https://hub.docker.com/_/alpine/) with the [Hipchat Ad
 - NPM: 2.24.9
 
 ## Default Scripts
-- [hubot-hipchat](https://github.com/hipchat/hubot-hipchat)
 - [hubot-diagnostics]()
 - [hubot-help]()
 - [hubot-google-images]()
@@ -16,10 +15,7 @@ Hubot running on [Alpine](https://hub.docker.com/_/alpine/) with the [Hipchat Ad
 - [hubot-redis-brain](https://github.com/github/hubot-scripts/blob/master/src/scripts/redis-brain.coffee)
 - [hubot-rules]()
 - [hubot-shipit](https://github.com/github/hubot-scripts/blob/master/src/scripts/shipit.coffee)
-- [hubot-pager-me](https://github.com/hubot-scripts/hubot-pager-me)
-- [hubot-plusplus](https://github.com/hubot-scripts/hubot-plusplus)
 - [hubot-reload-scripts](https://github.com/vinta/hubot-reload-scripts)
-- [hubot-leankit](https://github.com/battlemidget/hubot-leankit)
 
 ## Installed Packages
 - bash
@@ -174,26 +170,9 @@ export HUBOT_NAME='hubot' # what hubot listens to
 ## Comma separated list of users who administer Hubot Auth
 export HUBOT_AUTH_ADMIN="YourName"
 
-## Hipchat adapter settings
-
-# Credentials
-export HUBOT_HIPCHAT_JID="JID@chat.hipchat.com"
-export HUBOT_HIPCHAT_PASSWORD="SuperSecretPassword"
-
-# Actual Rooms to join (JIDs)
-export HUBOT_HIPCHAT_ROOMS="JID_RoomName@conf.hipchat.com"
-
-# Set true/false to auto join rooms when mentioned/invited (true/false)
-export HUBOT_HIPCHAT_JOIN_ROOMS_ON_INVITE="true"
-
-# Explicitly refuse to join specified rooms (JIDs)
-export HUBOT_HIPCHAT_ROOMS_BLACKLIST=""
-
-# Auto reconnect attempt (true/false)
-export HUBOT_HIPCHAT_RECONNECT="true"
-
-# Set true/false for bot to join public rooms.
-export HUBOT_HIPCHAT_JOIN_PUBLIC_ROOMS="false"
+## Slack adapter settings
+# slack setting
+export HUBOT_SLACK_TOKEN=<YOUR_TOKEN>
 ```
 
 ## external-scripts.json
