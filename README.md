@@ -177,6 +177,7 @@ The embedded script-install.py utilizes the external-scripts-for-npm.json for it
   "hubot-redis-brain",
   "hubot-rules",
   "hubot-shipit",
-  "hubot-reload-scripts"
+  "hubot-reload-scripts",
+  "bouzuya/hubot-lgtm"
 ]
 ```
