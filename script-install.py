@@ -12,6 +12,8 @@ with open("external-scripts-for-npm.json") as data_file:
         module_name = script
         if "/" in script:
             module_name = os.path.splitext(os.path.basename(script))[0]
+        if "#" in module_name:
+            module_name = module_name.split("#")[0]
         module_names.append('"' + module_name + '"')
 
 with open("external-scripts.json", "w") as install_file:
