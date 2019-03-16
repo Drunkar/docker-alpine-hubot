@@ -1,0 +1,16 @@
+version: "3"
+
+services:
+  hubot:
+    build:
+      context: ./hubot/
+      dockerfile: ./Dockerfile
+    volumes:
+      - ./hubot.conf:/opt/bot/config/hubot.conf
+      - ./redis.conf:/opt/bot/redis/redis.conf
+      - ./external-scripts.json:/opt/bot/external-scripts.json
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "1k"
+        max-file: "3"

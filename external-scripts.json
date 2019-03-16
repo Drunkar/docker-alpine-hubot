@@ -8,7 +8,5 @@
   "hubot-redis-brain",
   "hubot-rules",
   "hubot-shipit",
-  "hubot-youtube",
-  "hubot-reload-scripts",
-  "bouzuya/hubot-lgtm"
+  "hubot-fliptable"
 ]
