@@ -8,7 +8,7 @@ services:
     volumes:
       - ./hubot.conf:/opt/bot/config/hubot.conf
       - ./redis.conf:/opt/bot/redis/redis.conf
-      - ./external-scripts.json:/opt/bot/external-scripts.json
+      - ./external-scripts-input.json:/opt/bot/external-scripts-input.json
     logging:
       driver: "json-file"
       options:

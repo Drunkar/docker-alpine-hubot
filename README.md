@@ -14,12 +14,12 @@
 
 ## Default Scripts
 
-Please see `external-scripts.json`.
+Please see `external-scripts-input.json`.
 
 
 ## Usage
 
-After editing `.env`, `hubot.conf` and `external-scripts.json` to meet your needs,
+After editing `.env`, `hubot.conf` and `external-scripts-input.json` to meet your needs,
 
 ```
 docker-compose up -d
